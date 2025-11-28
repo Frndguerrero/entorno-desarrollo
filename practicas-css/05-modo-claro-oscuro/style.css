@@ -1,0 +1,113 @@
+/* Define aquí las variables globales (modo claro) */
+:root {
+    --color-fondo: #f4f4f4;
+    --color-texto: #222;
+    --color-principal: #0044ff;
+    --color-secundario: #3785db;
+    --color-acento: hsla(35, 100%, 55%, 1);
+
+    --espaciado-base: 1rem;
+    --radio-base: 0.5rem;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --fuente-base: system-ui, sans-serif;
+}
+
+/* Estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color:
+        var(--color-fondo);
+    color:
+        var(--color-texto);
+    line-height: 1.6;
+    padding:
+        var(--espaciado-base);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    color:
+        var(--color-principal);
+    margin-bottom:
+        var(--espaciado-base);
+}
+
+a {
+    color:
+        var(--color-acento);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    margin-top:
+        var(--espaciado-base);
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+    background-color:
+        var(--color-principal);
+    color:
+        var(--color-fondo);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color:
+        var(--color-secundario)
+}
+
+/* Switch para el modo oscuro */
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: var(--color-secundario);
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 1px;
+    top: 1px;
+    background-color: var(--color-principal);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-secundario);
+}
+
+input:checked+.slider::before {
+    transform: translateX(20px);
+}
+
+.label-text {
+    font-size: 0.9rem;
+}

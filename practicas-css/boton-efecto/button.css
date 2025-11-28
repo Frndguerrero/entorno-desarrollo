@@ -1,0 +1,49 @@
+.btn-animado {
+    position: relative;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, hsl(340, 42%, 54%), #fc256d);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Efecto de brillo */
+.btn-animado::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shine 2.2s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* Hover */
+.btn-animado:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+/* Click */
+.btn-animado:active {
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}

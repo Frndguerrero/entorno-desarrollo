@@ -1,0 +1,35 @@
+:root{
+    --color-destacado: red;
+    --color-primary: blue;
+    --color-light: white;
+}
+header{
+    color: var(--color-light);
+    background: var(--color-primary);
+}
+.card{
+
+}
+.card__title{
+    font-weight: bold;
+}
+.card__texto{
+    margin-bottom: 1rem;
+}
+.button{
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.button--primary{
+    background: var(--color-destacado);
+    color: var(--color-light)
+    
+}
+.text-center{
+    text-align: center;
+}
+.h1 {
+    font-size: 2rem;
+}
